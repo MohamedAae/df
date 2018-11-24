@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+@import "vendor/normalize";
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #f9f9f9;
+  color: #24292e;
+}
+
+#access {
+  display: table;
+  width: 100%;
+  height: 100vh;
+}
+
+.login {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.header {
+  text-align: center;
+
+  h1 {
+    color: #24292e;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+  }
+}
+
+.signin-modal {
+  width: 330px;
+  margin: 0 auto;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+}
+
+.signin-modal label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.signin-modal input {
+  width: 100%;
+  margin: 5px 0 15px;
+}
+
+.btn {
+  -moz-appearance: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  appearance: none;
+  background-position: -1px -1px;
+  background-repeat: repeat-x;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #28a745;
+  background-image: linear-gradient(-180deg, #28be4b, #1a8833 90%);
+  font-weight: bold;
+}
+
+.create-account {
+  width: 330px;
+  margin: 17px auto 0;
+  border: 1px solid #ddd;
+  color: #0b0b0b;
+  text-align: center;
+}
+
+/* We can remove the border we've set at the beginnig */
+#gjs {
+  border: none;
+}
+/* Grapesjs Theming */
+
+/* Primary color for the background */
+.gjs-one-bg {
+  background-color: #000;
+}
+
+/* Secondary color for the text color */
+.gjs-two-color {
+  color: #c3073f;
+}
+
+/* Tertiary color for the background */
+.gjs-three-bg {
+  background-color: #161614;
+  color: white;
+}
+
+/* Quaternary color for the text color */
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #fff;
+}
+
+.gjs-category-title,
+.gjs-sm-sector .gjs-sm-title,
+.gjs-clm-tags .gjs-sm-title,
+.gjs-block-category .gjs-title,
+.gjs-layer-title {
+  color: white;
+  font-weight: bold;
+}
