@@ -3,8 +3,9 @@ import "whatwg-fetch";
 import "grapesjs/dist/css/grapes.min.css";
 import grapesjs from "grapesjs";
 import "grapesjs-preset-webpage";
-
 import { getFromStorage, setInStorage } from "../../utils/storage";
+import Cookies from "universal-cookie";
+import Header from "../Header/Header";
 
 class Home extends Component {
   constructor(props) {
@@ -81,6 +82,8 @@ class Home extends Component {
         console.log("json", json);
         if (json.success) {
           setInStorage("df_access", { token: json.token });
+          const cookies = new Cookies();
+          cookies.set("df_access", json.token, { path: "/" });
           this.setState({
             signInError: json.message,
             isLoading: false,
@@ -109,8 +112,12 @@ class Home extends Component {
 
     if (isLoading) {
       return (
-        <div>
-          <p>Loading ..</p>
+        <div id="loading">
+          <div className="c">
+            <div className="loading-text">Loading</div>
+            <hr />
+            <div className="_1">Kindly, be patient.</div>
+          </div>
         </div>
       );
     }
@@ -162,7 +169,6 @@ class Home extends Component {
         </div>
       );
     }
-
     const editor = grapesjs.init({
       storageManager: {
         id: "gjs-", // Prefix identifier that will be used on parameters
@@ -177,9 +183,7 @@ class Home extends Component {
       // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
       plugins: ["gjs-preset-webpage"],
       pluginsOpts: {
-        "gjs-preset-webpage": {
-          // options
-        }
+        "gjs-preset-webpage": {}
       },
       assetManager: {
         // Upload endpoint, set `false` to disable upload, default `false`
@@ -200,7 +204,12 @@ class Home extends Component {
       }
     });
 
-    return <></>;
+    return (
+      <>
+        {" "}
+        <Header />
+      </>
+    );
   }
 }
 
